@@ -4,7 +4,7 @@ import com.example.mcsefa.dtos.CustomerDTO;
 import com.example.mcsefa.dtos.CustomerFilterRequest;
 import com.example.mcsefa.entities.Customer;
 import com.example.mcsefa.mappers.CustomerMapper;
-import com.example.mcsefa.repositories.CustomerRepository;
+import com.example.mcsefa.DAO.repositories.CustomerRepository;
 import org.mapstruct.factory.Mappers;
 import org.springframework.stereotype.Service;
 
@@ -35,6 +35,11 @@ public class CustomerService {
                 customerFilterRequest.getPhoneNumber(),
                 customerFilterRequest.getBankCode());
         return filteredList.stream().map(customerMapper::entityToModel).collect(Collectors.toList());
+    }
+
+    public List<CustomerDTO> filterCustomersBySpecs(CustomerFilterRequest customerFilterRequest) {
+        // todo: use specifications
+        return null;
     }
 
 }
