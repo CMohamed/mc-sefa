@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/sefa
+    username: postgres
+    password: 12345
+  h2:
+    console.enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties.hibernate:
+      dialect: org.hibernate.dialect.PostgreSQL81Dialect
+      format-sql: true
+springdoc:
+  swagger-ui:
+    path: /swagger-ui-custom.html
