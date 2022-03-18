@@ -19,6 +19,14 @@ public class CustomerSpecifications {
         };
     }
 
+    public static Specification<Customer> withPhoneNumber(String phoneNumber) {
+        return (root, query, cb) -> phoneNumber == null ? null : cb.like(root.get("phoneNumber"), phoneNumber);
+    }
+
+    public static Specification<Customer> withNameContains(String name) {
+        return (root, query, cb) -> name == null ? null : cb.like(root.get("name"), "%" + name + "%");
+    }
+
     public static Specification<Customer> name(String name) {
         return new Specification<Customer>() {
             @Override

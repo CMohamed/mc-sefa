@@ -8,7 +8,13 @@ public class CustomerDTO {
 
     private String phoneNumber;
 
-    private String bankCode;
+    private String accountName;
+
+    private String kycLevel;
+
+    private String accountNumber;
+
+    private String bankVerificationNumber;
 
     public Long getId() {
         return id;
@@ -34,11 +40,35 @@ public class CustomerDTO {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getBankCode() {
-        return bankCode;
+    public String getAccountName() {
+        return accountName;
     }
 
-    public void setBankCode(String bankCode) {
-        this.bankCode = bankCode;
+    public void setAccountName(String accountName) {
+        this.accountName = accountName;
+    }
+
+    public String getKycLevel() {
+        return kycLevel;
+    }
+
+    public void setKycLevel(String kycLevel) {
+        this.kycLevel = kycLevel;
+    }
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public String getBankVerificationNumber() {
+        return bankVerificationNumber;
+    }
+
+    public void setBankVerificationNumber(String bankVerificationNumber) {
+        this.bankVerificationNumber = bankVerificationNumber;
     }
 }
