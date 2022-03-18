@@ -36,6 +36,10 @@ public class CustomerService {
         return null;
     }
 
+    public List<Customer> findAllByPhoneNumber(String phoneNumber) {
+        return customerRepository.findAllByPhoneNumber(phoneNumber);
+    }
+
     public List<Customer> filterCustomersBySpecs(CustomerFilterRequest customerFilterRequest) {
         // todo: use specifications
         Specification<Customer> spec = CustomerSpecifications.phoneNumber(customerFilterRequest.getPhoneNumber());

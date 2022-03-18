@@ -20,11 +20,11 @@ public class Customer {
 
     private String accountName;
 
-    private String kycLevel;
+    private int kycLevel;
 
-    private String accountNumber;
+    private int accountNumber;
 
-    private String bankVerificationNumber;
+    private int bankVerificationNumber;
 
     public Long getId() {
         return id;
@@ -58,27 +58,27 @@ public class Customer {
         this.accountName = accountName;
     }
 
-    public String getKycLevel() {
+    public int getKycLevel() {
         return kycLevel;
     }
 
-    public void setKycLevel(String kycLevel) {
+    public void setKycLevel(int kycLevel) {
         this.kycLevel = kycLevel;
     }
 
-    public String getAccountNumber() {
+    public int getAccountNumber() {
         return accountNumber;
     }
 
-    public void setAccountNumber(String accountNumber) {
+    public void setAccountNumber(int accountNumber) {
         this.accountNumber = accountNumber;
     }
 
-    public String getBankVerificationNumber() {
+    public int getBankVerificationNumber() {
         return bankVerificationNumber;
     }
 
-    public void setBankVerificationNumber(String bankVerificationNumber) {
+    public void setBankVerificationNumber(int bankVerificationNumber) {
         this.bankVerificationNumber = bankVerificationNumber;
     }
 }

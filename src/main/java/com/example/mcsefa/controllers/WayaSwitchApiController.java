@@ -3,6 +3,7 @@ package com.example.mcsefa.controllers;
 import com.example.mcsefa.dtos.FinancialInstution;
 import com.example.mcsefa.dtos.WayaSwitchRequest;
 import com.example.mcsefa.dtos.WayaSwitchResponse;
+import com.example.mcsefa.entities.Customer;
 import com.example.mcsefa.services.CustomerService;
 import com.example.mcsefa.services.WayaSwitchApiService;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -30,6 +31,12 @@ public class WayaSwitchApiController {
         return ResponseEntity.ok(res);
     }
 
+    //2
+    @PostMapping("/bankB/customer/account/enquiry")
+    public ResponseEntity<WayaSwitchResponse> filterAndReturn(@RequestBody WayaSwitchRequest wayaSwitchRequest) {
+        WayaSwitchResponse res = wayaSwitchApiService.filterAndReturn(wayaSwitchRequest);
+        return ResponseEntity.ok(res);
+    }
 
 
 

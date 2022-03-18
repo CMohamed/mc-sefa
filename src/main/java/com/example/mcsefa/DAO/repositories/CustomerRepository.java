@@ -13,4 +13,6 @@ import java.util.List;
 public interface CustomerRepository extends JpaRepository<Customer, Long>, JpaSpecificationExecutor<Customer> {
 
     List<Customer> findAll(Specification<Customer> specification);
+
+    List<Customer> findAllByPhoneNumber(String phoneNumber);
 }

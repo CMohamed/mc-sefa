@@ -2,32 +2,59 @@ package com.example.mcsefa.dtos;
 
 public class WayaSwitchResponse {
 
-    private String name;
+    private String sessionId;
 
-    private String phoneNumber;
+    private int channelCode;
+
+    private int accountNumber;
+
+    private int bankVerificationNumber;
 
     private String accountName;
 
-    private String kycLevel;
+    private int kycLevel;
 
-    private String accountNumber;
+    private String responseCode;
 
-    private String bankVerificationNumber;
-
-    public String getName() {
-        return name;
+    public WayaSwitchResponse() {
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public WayaSwitchResponse(String sessionId, int channelCode, String responseCode) {
+        this.sessionId = sessionId;
+        this.channelCode = channelCode;
+        this.responseCode = responseCode;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getSessionId() {
+        return sessionId;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setSessionId(String sessionId) {
+        this.sessionId = sessionId;
+    }
+
+    public int getChannelCode() {
+        return channelCode;
+    }
+
+    public void setChannelCode(int channelCode) {
+        this.channelCode = channelCode;
+    }
+
+    public int getAccountNumber() {
+        return accountNumber;
+    }
+
+    public void setAccountNumber(int accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public int getBankVerificationNumber() {
+        return bankVerificationNumber;
+    }
+
+    public void setBankVerificationNumber(int bankVerificationNumber) {
+        this.bankVerificationNumber = bankVerificationNumber;
     }
 
     public String getAccountName() {
@@ -38,27 +65,19 @@ public class WayaSwitchResponse {
         this.accountName = accountName;
     }
 
-    public String getKycLevel() {
+    public int getKycLevel() {
         return kycLevel;
     }
 
-    public void setKycLevel(String kycLevel) {
+    public void setKycLevel(int kycLevel) {
         this.kycLevel = kycLevel;
     }
 
-    public String getAccountNumber() {
-        return accountNumber;
+    public String getResponseCode() {
+        return responseCode;
     }
 
-    public void setAccountNumber(String accountNumber) {
-        this.accountNumber = accountNumber;
-    }
-
-    public String getBankVerificationNumber() {
-        return bankVerificationNumber;
-    }
-
-    public void setBankVerificationNumber(String bankVerificationNumber) {
-        this.bankVerificationNumber = bankVerificationNumber;
+    public void setResponseCode(String responseCode) {
+        this.responseCode = responseCode;
     }
 }
