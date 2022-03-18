@@ -25,15 +25,29 @@ public class WayaSwitchApiController {
     }
 
     // 1
-    @PostMapping("/bankA/customer/account/enquiry")
+    @PostMapping("/bankA/customer/account/enquiry/waya-stack")
     public ResponseEntity<WayaSwitchResponse> postDataToWayaSwitchApi(@RequestBody WayaSwitchRequest wayaSwitchRequest) {
         WayaSwitchResponse res = wayaSwitchApiService.postDataToWayaSwitch(wayaSwitchRequest);
         return ResponseEntity.ok(res);
     }
 
     //2
-    @PostMapping("/bankB/customer/account/enquiry")
+    @PostMapping("/bankA/customer/account/enquiry")
     public ResponseEntity<WayaSwitchResponse> filterAndReturn(@RequestBody WayaSwitchRequest wayaSwitchRequest) {
+        WayaSwitchResponse res = wayaSwitchApiService.filterAndReturn(wayaSwitchRequest);
+        return ResponseEntity.ok(res);
+    }
+
+    // 1
+    @PostMapping("/bankB/customer/account/enquiry/waya-stack")
+    public ResponseEntity<WayaSwitchResponse> postDataToWayaSwitchApiB(@RequestBody WayaSwitchRequest wayaSwitchRequest) {
+        WayaSwitchResponse res = wayaSwitchApiService.postDataToWayaSwitch(wayaSwitchRequest);
+        return ResponseEntity.ok(res);
+    }
+
+    //2
+    @PostMapping("/bankB/customer/account/enquiry")
+    public ResponseEntity<WayaSwitchResponse> filterAndReturnB(@RequestBody WayaSwitchRequest wayaSwitchRequest) {
         WayaSwitchResponse res = wayaSwitchApiService.filterAndReturn(wayaSwitchRequest);
         return ResponseEntity.ok(res);
     }
