@@ -39,7 +39,6 @@ public class WayaSwitchApiController {
     }
 
 
-
     @GetMapping("/list/financial/institutions")
     public ResponseEntity<List<FinancialInstution>> getFI() throws JsonProcessingException {
         List<FinancialInstution> res = wayaSwitchApiService.getFinancialInstitutions();

@@ -26,6 +26,8 @@ public class Customer {
 
     private int bankVerificationNumber;
 
+    private String bankCode;
+
     public Long getId() {
         return id;
     }
@@ -80,5 +82,13 @@ public class Customer {
 
     public void setBankVerificationNumber(int bankVerificationNumber) {
         this.bankVerificationNumber = bankVerificationNumber;
+    }
+
+    public String getBankCode() {
+        return bankCode;
+    }
+
+    public void setBankCode(String bankCode) {
+        this.bankCode = bankCode;
     }
 }
