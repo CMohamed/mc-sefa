@@ -20,7 +20,7 @@ import java.util.List;
 @Service
 public class WayaSwitchApiService {
     private final String WAYA_SWITCH_BASE_URL = "http://18.117.154.75:8090/";
-    private final String CUSTOMER_ACCOUNT_ENQUIRY = "/cutomer/account/enquiery";
+    private final String CUSTOMER_ACCOUNT_ENQUIRY = "/customer/account/enquiry";
     private final String FINANCIAL_INSTUTIONS = "/list/financial/institutions";
 
 
