@@ -34,5 +34,4 @@ public class CustomerController {
     public ResponseEntity<Long> save(@RequestBody CustomerDTO customerDTO) {
         return ResponseEntity.ok(customerService.save(customerDTO));
     }
-
 }

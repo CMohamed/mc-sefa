@@ -1,11 +1,13 @@
 package com.example.mcsefa.services;
 
+import com.example.mcsefa.DAO.specifications.CustomerSpecifications;
 import com.example.mcsefa.dtos.CustomerDTO;
 import com.example.mcsefa.dtos.CustomerFilterRequest;
 import com.example.mcsefa.entities.Customer;
 import com.example.mcsefa.mappers.CustomerMapper;
 import com.example.mcsefa.DAO.repositories.CustomerRepository;
 import org.mapstruct.factory.Mappers;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -31,15 +33,19 @@ public class CustomerService {
     }
 
     public List<CustomerDTO> filterCustomers(CustomerFilterRequest customerFilterRequest) {
-        List<Customer> filteredList = customerRepository.findAllByNameContainingAndPhoneNumberAndBankCode(customerFilterRequest.getName(),
-                customerFilterRequest.getPhoneNumber(),
-                customerFilterRequest.getBankCode());
-        return filteredList.stream().map(customerMapper::entityToModel).collect(Collectors.toList());
+        return null;
     }
 
-    public List<CustomerDTO> filterCustomersBySpecs(CustomerFilterRequest customerFilterRequest) {
+    public List<Customer> findAllByPhoneNumber(String phoneNumber) {
+        return customerRepository.findAllByPhoneNumber(phoneNumber);
+    }
+
+    public List<Customer> filterCustomersBySpecs(CustomerFilterRequest customerFilterRequest) {
         // todo: use specifications
-        return null;
+        Specification<Customer> spec = CustomerSpecifications.phoneNumber(customerFilterRequest.getPhoneNumber());
+        Specification<Customer> spec2 = CustomerSpecifications.name(customerFilterRequest.getName());
+        Specification<Customer> specFinal = spec.and(spec2);
+        return customerRepository.findAll( Specification.not(specFinal) );
     }
 
 }
